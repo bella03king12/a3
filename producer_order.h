@@ -1,0 +1,15 @@
+#ifndef PRODUCER_ORDER_H
+#define PRODUCER_ORDER_H
+
+#include <string>
+#include <queue>
+#include <iostream>
+#include <thread>
+#include <chrono>
+
+class producer_order{
+    public:
+        void * producer(void * arg);
+};
+
+#endif
