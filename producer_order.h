@@ -7,9 +7,8 @@
 #include <thread>
 #include <chrono>
 
-class producer_order{
-    public:
-        void * producer(void * arg);
-};
+
+void * producer(void * arg);
+
 
 #endif

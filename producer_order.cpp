@@ -1,14 +1,17 @@
 #include "producer_order.h"
-#include "main.cpp"
 #include "items.h"
+#include "order_queue.h"
 
 
-void * producer_order::producer(void * arg){
+void * producer(void * arg){
     Item * items = (Item *) arg;
+    Order order;
     int num_produced = 0;
     while (num_produced < (*items).n){
+        order.type = (*items).type;
         std::this_thread::sleep_for(std::chrono::seconds((*items).avg_time));
-        std::cout << "Producing order: " << ++num_produced << " Order Type: " << (*items).type << std::endl;
+        
+        std::cout << "Produced order: " << ++num_produced << " Order Type: " << (*items).type << std::endl;
     }
 };
 

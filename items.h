@@ -5,6 +5,7 @@
 #include <queue>
 
 
+// generic arguments for a producer and consumer
 struct Item {
     int n;
     int avg_time;
@@ -12,13 +13,9 @@ struct Item {
     std::queue<int> buffer;
 };
 
-struct Item_Main {
-    int n;
-    int avg_spot;
-    int avg_market;
-    int avg_ethexec;
-    int avg_solexec;
-    int avg_settler;
+// SPOT, MARKET
+struct Order{
+    std::string type;
 };
 
 

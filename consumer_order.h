@@ -8,9 +8,8 @@
 #include <chrono>
 
 
-class consumer_order{
-    public:
-        void * consumer(void * arg);
-};
+
+
+void * consumer(void * arg);
 
 #endif
