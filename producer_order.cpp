@@ -10,7 +10,7 @@ void * producer(void * arg){
     while (num_produced < (*items).n){
         order.type = (*items).type;
         std::this_thread::sleep_for(std::chrono::seconds((*items).avg_time));
-        
+        (*items).buffer.insert_order(order);
         std::cout << "Produced order: " << ++num_produced << " Order Type: " << (*items).type << std::endl;
     }
 };

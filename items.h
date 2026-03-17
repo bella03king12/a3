@@ -3,6 +3,7 @@
 
 #include <string>
 #include <queue>
+#include "order_queue.h"
 
 
 // generic arguments for a producer and consumer
@@ -10,7 +11,7 @@ struct Item {
     int n;
     int avg_time;
     std::string type;
-    std::queue<int> buffer;
+    order_queue buffer;
 };
 
 // SPOT, MARKET

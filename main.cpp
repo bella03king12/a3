@@ -8,6 +8,7 @@
 #include "producer_order.h"
 #include "consumer_order.h"
 #include "items.h"
+#include "order_queue.h"
 
 
 
@@ -83,8 +84,7 @@ int main(int argc, char *argv[]){
     int var1, var3;
 
     // create fake buffers for init testing
-    std::queue<int> buffer1;
-    std::queue<int> buffer2;
+    order_queue queue_1 = order_queue(n);
 
     // Add all arguments into a struct
     Item product;
@@ -93,12 +93,12 @@ int main(int argc, char *argv[]){
     product.n = n;
     product.avg_time = avg_spot;
     product.type = "SPOT";
-    product.buffer = buffer1;
+    product.buffer = queue_1;
 
     consume.n = n;
     consume.avg_time = avg_ethexec;
     consume.type = "ETHEXEC";
-    consume.buffer = buffer2;
+    consume.buffer = queue_1;
 
     // create semaphore to lock different threads
     sem_t lock;
