@@ -5,6 +5,7 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include "order.h"
 
 /*
 Stage 2 :
@@ -26,7 +27,7 @@ void *exec_consumer(void *arg) {
         Order order = items->reserved_queue->remove_order();
 
         // Simulate on-chain execution delay
-        std::this_thread::sleep_for(std::chrono::seconds(items->avg_time));
+        std::this_thread::sleep_for(std::chrono::milliseconds(items->avg_time));
 
         // Publish execution proof for settlement
         items->execution_queue->insert_order(order);

@@ -5,6 +5,7 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include "order.h"
 
 void *producer(void *arg) {
     ProducerItem *items = (ProducerItem *)arg;
@@ -13,7 +14,7 @@ void *producer(void *arg) {
     std::cout << "Producer " << order_producerNames[items->order_type] << " started\n";
 
     while (produced < items->n) {
-        std::this_thread::sleep_for(std::chrono::seconds(items->avg_time));
+        std::this_thread::sleep_for(std::chrono::milliseconds(items->avg_time));
         Order order{items->order_type};
         items->reserved_queue->insert_order(order);
         produced++;

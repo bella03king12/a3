@@ -8,9 +8,9 @@ CXX = g++
 CXXFLAGS = -std=c++11 -Wall -g3 -c -shared -pthread
 
 # object files
-OBJS = log.o main.o consumer_order.o consumer_execution.o producer_order.o items.o order_queue.o
+OBJS = log.o main.o consumer_order.o consumer_execution.o producer_order.o order_queue.o
 
-#  millisleep.o init.o order_queue.o
+#  millisleep.o init.o items.o
 
 # Program name
 PROGRAM = tradepipeline
@@ -34,8 +34,8 @@ producer_order.o: producer_order.cpp producer_order.h
 order_queue.o: order_queue.cpp order_queue.h
 	$(CXX) $(CXXFLAGS) order_queue.cpp
 
-items.o: items.cpp items.h
-	$(CXX) $(CXXFLAGS) items.cpp
+#items.o: items.cpp items.h
+#	$(CXX) $(CXXFLAGS) items.cpp
 
 #init.o: init.cpp init.h
 #	$(CXX) $(CXXFLAGS) init.cpp

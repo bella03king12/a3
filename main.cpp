@@ -8,7 +8,16 @@
 #include "items.h"
 #include "trade_pipeline.h"
 
+
+
 int main(int argc, char *argv[]) {
+
+    /* __________________
+        SET UP ARGUEMENTS
+       __________________*/
+
+    
+    // Set defaults arguements
     int n = 120;
     int avg_spot = 0;
     int avg_market = 0;
@@ -16,11 +25,14 @@ int main(int argc, char *argv[]) {
     int avg_solexec = 0;
     int avg_settler = 0;
 
+
+    //Double check that there is one number for each tag    
     if ((argc - 1) % 2 != 0) {
         std::cout << "Error: Not enough arguments for tags." << std::endl;
         return 1;
     }
 
+    //Parse the tags + if there isn't a tag, keep the default
     for (int i = 1; i < argc; i += 2) {
         std::string value = argv[i];
         if (value[0] == '-') {
@@ -34,6 +46,13 @@ int main(int argc, char *argv[]) {
             }
         }
     }
+
+    
+
+    /* ____________
+        MAIN THREAD
+       ____________*/
+
 
     std::cout << "Start Main Thread" << std::endl;
 

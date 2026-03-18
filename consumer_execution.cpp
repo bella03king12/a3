@@ -5,6 +5,7 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include "order.h"
 /*
 Stage 3 :
 - Two executor threads (EthExec and SolExec) consume from the reserved order queue, simulate on-chain execution, and produce execution proofs in the execution queue.
@@ -24,7 +25,7 @@ void *settler(void *arg) {
         Order order = items->execution_queue->remove_order();
 
         // Simulate settlement delay
-        std::this_thread::sleep_for(std::chrono::seconds(items->avg_time));
+        std::this_thread::sleep_for(std::chrono::milliseconds(items->avg_time));
 
         settled++;
         std::cout << "Settler finalized " << settled << " proof(s) of type "
