@@ -5,6 +5,7 @@
 #include <pthread.h>
 #include <iostream>
 #include "order.h"
+#include <atomic>
 
 class order_queue {
     public:
@@ -13,7 +14,11 @@ class order_queue {
         Order remove_order();
         int size();
         bool empty();
-
+        //shared var so should use atomic<>. 
+        //Other vars are only updated or read in the critical section 
+        //and are not shared with producer and consumer
+        std::atomic<int> order_counter{0};
+        std::atomic<int> consume_counter{0};
         std::queue<Order> buffer;
 
     private:

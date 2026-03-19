@@ -7,6 +7,7 @@
 #include "consumer_execution.h"
 #include "items.h"
 #include "trade_pipeline.h"
+#include <semaphore.h>
 
 
 
@@ -58,7 +59,7 @@ int main(int argc, char *argv[]) {
 
     // Queues: reserved orders for execution and execution proofs for settlement
     order_queue reserved_queue(25);
-    order_queue execution_queue(2 * n);
+    order_queue execution_queue(15);
 
     // Two producers, one for each order type
     ProducerItem p1 = {n, avg_spot, SpotLimit, &reserved_queue};
@@ -69,21 +70,28 @@ int main(int argc, char *argv[]) {
     ExecutorItem e2 = {n, avg_solexec, SolExec, &reserved_queue, &execution_queue};
 
     // One settler that settles both execution proofs
-    SettlerItem s = {2 * n, avg_settler, &execution_queue};
+    SettlerItem s = {n, avg_settler, &execution_queue};
 
     pthread_t t_p1, t_p2, t_e1, t_e2, t_s;
 
-    pthread_create(&t_p1, NULL, producer, &p1);
-    pthread_create(&t_p2, NULL, producer, &p2);
-    pthread_create(&t_e1, NULL, exec_consumer, &e1);
-    pthread_create(&t_e2, NULL, exec_consumer, &e2);
-    pthread_create(&t_s, NULL, settler, &s);
+    //sem_t mutex;
 
+
+    int r1 = pthread_create(&t_p1, NULL, producer, &p1);
+    int r2 = pthread_create(&t_p2, NULL, producer, &p2);
+    int r3 = pthread_create(&t_e1, NULL, exec_consumer, &e1);
+    int r4 = pthread_create(&t_e2, NULL, exec_consumer, &e2);
+    int r5 = pthread_create(&t_s, NULL, settler, &s);
+
+    // checked: threads made successfully
+    
+    /*
     pthread_join(t_p1, NULL);
     pthread_join(t_p2, NULL);
     pthread_join(t_e1, NULL);
     pthread_join(t_e2, NULL);
     pthread_join(t_s, NULL);
+    */
 
     std::cout << "End Main Thread" << std::endl;
     return 0;

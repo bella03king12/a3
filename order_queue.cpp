@@ -37,6 +37,13 @@ void order_queue::insert_order(Order order) {
     //check if need to wake consumer
     bool was_empty = buffer.empty();
     buffer.push(order);
+
+
+    //atomic int var that increments upon each order that is added
+    //should be a safe increment (atomic and in critical section)
+    order_counter++;
+
+
     if (order.type == MarketSwap) {
         market_swap_in_queue++;
     }
@@ -63,6 +70,7 @@ Order order_queue::remove_order() {
     Order order = buffer.front();
     //remove saved order from queue
     buffer.pop();
+    consume_counter++;
     if (order.type == MarketSwap) {
         market_swap_in_queue--;
     }

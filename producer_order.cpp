@@ -9,16 +9,16 @@
 
 void *producer(void *arg) {
     ProducerItem *items = (ProducerItem *)arg;
-    int produced = 0;
+    //int produced = 0;
 
     std::cout << "Producer " << order_producerNames[items->order_type] << " started\n";
 
-    while (produced < items->n) {
+    while (items->reserved_queue->order_counter < items->n) {
         std::this_thread::sleep_for(std::chrono::milliseconds(items->avg_time));
         Order order{items->order_type};
         items->reserved_queue->insert_order(order);
-        produced++;
-        std::cout << "Produced " << produced << " " << order_producerNames[order.type] << " order\n";
+        //produced++;
+        std::cout << "Produced " << items->reserved_queue->order_counter << " " << order_producerNames[order.type] << " order\n";
     }
 
     std::cout << "Producer " << order_producerNames[items->order_type] << " finished\n";

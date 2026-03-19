@@ -16,6 +16,8 @@ Stage 3 :
 // Settler thread: drain execution proof queue and finalize settlement records.
 void *settler(void *arg) {
     SettlerItem *items = (SettlerItem *)arg;
+
+    // there aren't multiple settler threads so it can count internally using settled instead of order_counter
     int settled = 0;
 
     std::cout << "Settler started\n";

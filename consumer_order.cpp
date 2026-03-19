@@ -18,11 +18,11 @@ Stage 2 :
 // Executor thread: consume from reserved queue and produce execution proof in execution queue.
 void *exec_consumer(void *arg) {
     ExecutorItem *items = (ExecutorItem *)arg;
-    int consumed = 0;
+    //int consumed = 0;
 
     std::cout << "Executor " << order_consumerNames[items->chain] << " started\n";
 
-    while (consumed < items->n) {
+    while (items->reserved_queue->consume_counter < items->n) {
         // Wait for a reserved order to be available
         Order order = items->reserved_queue->remove_order();
 
@@ -31,10 +31,10 @@ void *exec_consumer(void *arg) {
 
         // Publish execution proof for settlement
         items->execution_queue->insert_order(order);
-        consumed++;
+        //consumed++;
 
         std::cout << "Executor " << order_consumerNames[items->chain]
-                  << " handled " << consumed << " order(s) of type "
+                  << " handled " << items->reserved_queue->order_counter << " order(s) of type "
                   << order_producerNames[order.type] << "\n";
     }
 
