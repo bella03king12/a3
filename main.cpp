@@ -74,7 +74,8 @@ int main(int argc, char *argv[]) {
 
     pthread_t t_p1, t_p2, t_e1, t_e2, t_s;
 
-    //sem_t mutex;
+    sem_t barrier;
+    sem_init(&barrier, 0, 1);
 
 
     int r1 = pthread_create(&t_p1, NULL, producer, &p1);
