@@ -7,6 +7,7 @@ Purpose: This file defines the Order structure used in the trade pipeline. Each 
 */
 struct Order {
     OrderType type;
+    ExecChainType chain;  // Execution chain for proofs
 };
 
 #endif

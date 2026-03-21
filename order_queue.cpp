@@ -18,6 +18,9 @@ order_queue::order_queue(int n) {
     max = n;
     // number of market_swap types in buffer
     market_swap_in_queue = 0;
+    //CHANGED
+    spot_in_queue = 0;
+    swap_in_queue = 0;
     lock = PTHREAD_MUTEX_INITIALIZER;
     cond_produce = PTHREAD_COND_INITIALIZER;
     cond_consume = PTHREAD_COND_INITIALIZER;
@@ -26,7 +29,7 @@ order_queue::order_queue(int n) {
 void order_queue::insert_order(Order order) {
     pthread_mutex_lock(&lock);
 
-    // check for space in the bugger based on number of orders and type of order
+    // check for space in the buffer based on number of orders and type of order
 
     while ((int)buffer.size() == max ||
            (order.type == MarketSwap && market_swap_in_queue >= 10)) {
@@ -43,11 +46,17 @@ void order_queue::insert_order(Order order) {
     //should be a safe increment (atomic and in critical section)
     order_counter++;
 
-
+    //CHANGED
+    //Update order type counters
     if (order.type == MarketSwap) {
         market_swap_in_queue++;
+        swap_in_queue++;
+    } 
+    else {
+        spot_in_queue++;
     }
 
+    //wake consumer if an order was added to an empty queue
     if (was_empty) {
         pthread_cond_signal(&cond_consume);
     }
@@ -71,10 +80,17 @@ Order order_queue::remove_order() {
     //remove saved order from queue
     buffer.pop();
     consume_counter++;
+
+    //CHANGED
+    //Update order type counters
     if (order.type == MarketSwap) {
         market_swap_in_queue--;
+        swap_in_queue--;
+    } else {
+        spot_in_queue--;
     }
 
+    //QUESTIONABLE: is this right "(order.type == MarketSwap)" ???
     if (was_full || (order.type == MarketSwap)) {
         pthread_cond_signal(&cond_produce);
     }

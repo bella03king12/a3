@@ -6,21 +6,39 @@
 #include <thread>
 #include <chrono>
 #include "order.h"
+#include "log.h"
+
+extern std::atomic<int> produced_spot;
+extern std::atomic<int> produced_swap;
+extern std::atomic<int> produced_claimed;
+extern std::chrono::high_resolution_clock::time_point start_time;
 
 void *producer(void *arg) {
     ProducerItem *items = (ProducerItem *)arg;
-    //int produced = 0;
-
-    std::cout << "Producer " << order_producerNames[items->order_type] << " started\n";
 
     while (items->reserved_queue->order_counter < items->n) {
+        //CHANGED
+        produced_claimed.fetch_add(1);
         std::this_thread::sleep_for(std::chrono::milliseconds(items->avg_time));
         Order order{items->order_type};
         items->reserved_queue->insert_order(order);
-        //produced++;
-        std::cout << "Produced " << items->reserved_queue->order_counter << " " << order_producerNames[order.type] << " order\n";
-    }
 
-    std::cout << "Producer " << order_producerNames[items->order_type] << " finished\n";
+        //CHANGED
+        if (order.type == SpotLimit) {
+            produced_spot++;
+        } else {
+            produced_swap++;
+        }
+        unsigned int produced[OrderTypeN] = {
+            static_cast<unsigned int>(produced_spot.load()),
+            static_cast<unsigned int>(produced_swap.load())
+        };
+        unsigned int in_queue[OrderTypeN] = {
+            static_cast<unsigned int>(items->reserved_queue->get_spot_in_queue()),
+            static_cast<unsigned int>(items->reserved_queue->get_swap_in_queue())
+        };
+        OrderAdded added = {order.type, produced, in_queue};
+        log_added_order(added);
+    }
     return nullptr;
 }

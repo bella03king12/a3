@@ -14,6 +14,10 @@ class order_queue {
         Order remove_order();
         int size();
         bool empty();
+        // CHANGED: Added getters for queue counters
+        int get_spot_in_queue() { return spot_in_queue; }
+        int get_swap_in_queue() { return swap_in_queue; }
+
         //shared var so should use atomic<>. 
         //Other vars are only updated or read in the critical section 
         //and are not shared with producer and consumer
@@ -27,6 +31,9 @@ class order_queue {
         pthread_cond_t cond_produce;
         int max;
         int market_swap_in_queue;
+        // CHANGED 
+        int spot_in_queue;
+        int swap_in_queue;
 };
 
 #endif

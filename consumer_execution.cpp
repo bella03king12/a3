@@ -6,7 +6,11 @@
 #include <thread>
 #include <chrono>
 #include "order.h"
-#include <semaphore.h>
+#include <semaphore.h> //CHANGED
+#include "log.h"
+//CHANGED
+extern std::chrono::high_resolution_clock::time_point start_time;
+
 /*
 Stage 3 :
 - Two executor threads (EthExec and SolExec) consume from the reserved order queue, simulate on-chain execution, and produce execution proofs in the execution queue.
@@ -21,8 +25,6 @@ void *settler(void *arg) {
     // there aren't multiple settler threads so it can count internally using settled instead of order_counter
     int settled = 0;
 
-    std::cout << "Settler started\n";
-
     while (settled < items->n) {
         // Wait for an execution proof to settle
         Order order = items->execution_queue->remove_order();
@@ -31,11 +33,15 @@ void *settler(void *arg) {
         std::this_thread::sleep_for(std::chrono::milliseconds(items->avg_time));
 
         settled++;
-        std::cout << "Settler finalized " << settled << " proof(s) of type "
-                  << order_producerNames[order.type] << "\n";
-    }
 
-    std::cout << "Settler finished\n";
+        //CHANGED
+        std::string proof_type = std::string(order_consumerNames[order.chain]) + order_producerNames[order.type];
+        int queue_size = items->execution_queue->size();
+        log_removed_execution(
+            proof_type.c_str(),
+            static_cast<unsigned int>(queue_size),
+            static_cast<unsigned int>(settled));
+    }
 
     //CHANGED
     //signals main thread that every execution proof has been consumed and it is time to finish the program

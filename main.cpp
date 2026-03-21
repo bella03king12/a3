@@ -8,7 +8,15 @@
 #include "items.h"
 #include "trade_pipeline.h"
 #include <semaphore.h>
+#include "log.h"
+#include <chrono>
 
+
+std::atomic<int> produced_spot{0};
+std::atomic<int> produced_swap{0};
+std::atomic<int> produced_claimed{0};
+std::atomic<int> execution_claimed{0};
+std::chrono::high_resolution_clock::time_point start_time;
 
 
 int main(int argc, char *argv[]) {
@@ -57,6 +65,13 @@ int main(int argc, char *argv[]) {
 
     std::cout << "Start Main Thread" << std::endl;
 
+
+    //CHANGED
+    produced_claimed.store(0);
+    execution_claimed.store(0);
+    produced_spot.store(0);
+    produced_swap.store(0);
+
     //CHANGED
     // Get semaphore ready
     sem_t barrier;
@@ -70,12 +85,18 @@ int main(int argc, char *argv[]) {
     ProducerItem p1 = {n, avg_spot, SpotLimit, &reserved_queue};
     ProducerItem p2 = {n, avg_market, MarketSwap, &reserved_queue};
 
-    // Two executor threads: Eth and Sol
-    ExecutorItem e1 = {n, avg_ethexec, EthExec, &reserved_queue, &execution_queue};
-    ExecutorItem e2 = {n, avg_solexec, SolExec, &reserved_queue, &execution_queue};
 
+    //CHANGED
+    // Two executor threads: Eth and Sol
+    ExecutorItem e1 = {n, avg_ethexec, EthExec, &reserved_queue, &execution_queue, 0, 0};
+    ExecutorItem e2 = {n, avg_solexec, SolExec, &reserved_queue, &execution_queue, 0, 0};
+
+    //CHANGED
     // One settler that settles both execution proofs
     SettlerItem s = {n, avg_settler, &execution_queue, &barrier};
+
+    //CHANGED
+    start_time = std::chrono::high_resolution_clock::now();
 
     pthread_t t_p1, t_p2, t_e1, t_e2, t_s;
 
@@ -96,6 +117,24 @@ int main(int argc, char *argv[]) {
     //CHANGED
     // Makes the main thread sleep till t_s signals that it has finished
     sem_wait(&barrier);
+
+
+
+    //CHANGED
+    unsigned int produced[OrderTypeN] = {
+        static_cast<unsigned int>(produced_spot.load()),
+        static_cast<unsigned int>(produced_swap.load())
+    };
+    unsigned int eth_consumed[OrderTypeN] = {
+        static_cast<unsigned int>(e1.consumed_spot),
+        static_cast<unsigned int>(e1.consumed_swap)
+    };
+    unsigned int sol_consumed[OrderTypeN] = {
+        static_cast<unsigned int>(e2.consumed_spot),
+        static_cast<unsigned int>(e2.consumed_swap)
+    };
+    unsigned int *consumed[ExecChainTypeN] = {eth_consumed, sol_consumed};
+    log_order_history(produced, consumed);
 
     std::cout << "End Main Thread" << std::endl;
     return 0;

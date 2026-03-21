@@ -6,6 +6,10 @@
 #include <thread>
 #include <chrono>
 #include "order.h"
+#include "log.h"
+
+extern std::chrono::high_resolution_clock::time_point start_time;
+extern std::atomic<int> execution_claimed;
 
 /*
 Stage 2 :
@@ -18,26 +22,44 @@ Stage 2 :
 // Executor thread: consume from reserved queue and produce execution proof in execution queue.
 void *exec_consumer(void *arg) {
     ExecutorItem *items = (ExecutorItem *)arg;
-    //int consumed = 0;
-
-    std::cout << "Executor " << order_consumerNames[items->chain] << " started\n";
 
     while (items->reserved_queue->consume_counter < items->n) {
+        //CHANGED
+        execution_claimed.fetch_add(1);
         // Wait for a reserved order to be available
         Order order = items->reserved_queue->remove_order();
 
         // Simulate on-chain execution delay
         std::this_thread::sleep_for(std::chrono::milliseconds(items->avg_time));
+    
+        // CHANGED
+        // Update consumed counts
+        if (order.type == SpotLimit) {
+            items->consumed_spot++;
+        } else {
+            items->consumed_swap++;
+        }
+
+        unsigned int consumed[OrderTypeN] = {
+            static_cast<unsigned int>(items->consumed_spot),
+            static_cast<unsigned int>(items->consumed_swap)
+        };
+        unsigned int in_queue[OrderTypeN] = {
+            static_cast<unsigned int>(items->reserved_queue->get_spot_in_queue()),
+            static_cast<unsigned int>(items->reserved_queue->get_swap_in_queue())
+        };
+        OrderRemoved removed = {items->chain, order.type, consumed, in_queue};
+        log_removed_order(removed);
+
+        // Set chain for proof  // CHANGED: Assign execution chain to order for proof identification
+        order.chain = items->chain;
 
         // Publish execution proof for settlement
         items->execution_queue->insert_order(order);
-        //consumed++;
 
-        std::cout << "Executor " << order_consumerNames[items->chain]
-                  << " handled " << items->reserved_queue->consume_counter << " order(s) of type "
-                  << order_producerNames[order.type] << "\n";
+        std::string proof_type = std::string(order_consumerNames[items->chain]) + order_producerNames[order.type];
+        int queue_size = items->execution_queue->size();
+        log_added_execution(proof_type.c_str(), static_cast<unsigned int>(queue_size));
     }
-
-    std::cout << "Executor " << order_consumerNames[items->chain] << " finished\n";
     return nullptr;
 }

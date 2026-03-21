@@ -25,12 +25,15 @@ struct ExecutorItem {
     ExecChainType chain;
     order_queue* reserved_queue;
     order_queue* execution_queue;
+    int consumed_spot;
+    int consumed_swap;
 };
 
 struct SettlerItem {
     int n;
     int avg_time;
     order_queue* execution_queue;
+    //CHANGED
     sem_t * semaphore;
 };
 
