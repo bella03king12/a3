@@ -63,9 +63,6 @@ int main(int argc, char *argv[]) {
        ____________*/
 
 
-    std::cout << "Start Main Thread" << std::endl;
-
-
     //CHANGED
     produced_claimed.store(0);
     execution_claimed.store(0);
@@ -135,7 +132,5 @@ int main(int argc, char *argv[]) {
     };
     unsigned int *consumed[ExecChainTypeN] = {eth_consumed, sol_consumed};
     log_order_history(produced, consumed);
-
-    std::cout << "End Main Thread" << std::endl;
     return 0;
 }

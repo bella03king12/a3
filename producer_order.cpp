@@ -16,7 +16,8 @@ extern std::chrono::high_resolution_clock::time_point start_time;
 void *producer(void *arg) {
     ProducerItem *items = (ProducerItem *)arg;
 
-    while (items->reserved_queue->order_counter < items->n) {
+    // CHANGED: items->n  to items->n - 1 : WORKS NOW but kinda doesn't make sense
+    while (items->reserved_queue->order_counter < items->n - 1) {
         //CHANGED
         produced_claimed.fetch_add(1);
         std::this_thread::sleep_for(std::chrono::milliseconds(items->avg_time));
@@ -39,6 +40,7 @@ void *producer(void *arg) {
         };
         OrderAdded added = {order.type, produced, in_queue};
         log_added_order(added);
+        //std::cout << "Insert " << order.type << "Produced: " << items->reserved_queue->order_counter << std::endl;
     }
     return nullptr;
 }
