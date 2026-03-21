@@ -1,0 +1,408 @@
+Reserved_orders_queue: 1 SPOT + 0 SWAP = 1. Added SpotLimit order. Produced: 1 SPOT + 0 SWAP = 1 in 0.000 s.
+Reserved_orders_queue: 0 SPOT + 0 SWAP = 0. EthExec consumed SpotLimit order.  EthExec totals: 1 SPOT + 0 SWAP = 1 consumed in 0.001 s.
+Reserved_orders_queue: 0 SPOT + 1 SWAP = 1. Added MarketSwap order. Produced: 1 SPOT + 1 SWAP = 2 in 0.002 s.
+Reserved_orders_queue: 0 SPOT + 0 SWAP = 0. SolExec consumed MarketSwap order.  SolExec totals: 0 SPOT + 1 SWAP = 1 consumed in 0.002 s.
+Reserved_orders_queue: 1 SPOT + 0 SWAP = 1. Added SpotLimit order. Produced: 2 SPOT + 1 SWAP = 3 in 0.011 s.
+Execution_proofs_queue: produced and added EthExecSPOT in 0.013 s, queue size: 1
+Reserved_orders_queue: 0 SPOT + 0 SWAP = 0. EthExec consumed SpotLimit order.  EthExec totals: 2 SPOT + 0 SWAP = 2 consumed in 0.013 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.014 s, queue size: 0, total settled: 1
+Reserved_orders_queue: 0 SPOT + 1 SWAP = 1. Added MarketSwap order. Produced: 2 SPOT + 2 SWAP = 4 in 0.014 s.
+Execution_proofs_queue: produced and added SolExecSWAP in 0.021 s, queue size: 1
+Reserved_orders_queue: 0 SPOT + 0 SWAP = 0. SolExec consumed MarketSwap order.  SolExec totals: 0 SPOT + 2 SWAP = 2 consumed in 0.021 s.
+Reserved_orders_queue: 1 SPOT + 0 SWAP = 1. Added SpotLimit order. Produced: 3 SPOT + 2 SWAP = 5 in 0.021 s.
+Execution_proofs_queue: produced and added EthExecSPOT in 0.026 s, queue size: 2
+Reserved_orders_queue: 0 SPOT + 0 SWAP = 0. EthExec consumed SpotLimit order.  EthExec totals: 3 SPOT + 0 SWAP = 3 consumed in 0.026 s.
+Reserved_orders_queue: 0 SPOT + 1 SWAP = 1. Added MarketSwap order. Produced: 3 SPOT + 3 SWAP = 6 in 0.027 s.
+Execution_proofs_queue: removed and settled SolExecSWAP in 0.029 s, queue size: 1, total settled: 2
+Reserved_orders_queue: 1 SPOT + 1 SWAP = 2. Added SpotLimit order. Produced: 4 SPOT + 3 SWAP = 7 in 0.032 s.
+Execution_proofs_queue: produced and added EthExecSPOT in 0.038 s, queue size: 2
+Reserved_orders_queue: 1 SPOT + 0 SWAP = 1. EthExec consumed MarketSwap order.  EthExec totals: 3 SPOT + 1 SWAP = 4 consumed in 0.038 s.
+Reserved_orders_queue: 1 SPOT + 1 SWAP = 2. Added MarketSwap order. Produced: 4 SPOT + 4 SWAP = 8 in 0.039 s.
+Execution_proofs_queue: produced and added SolExecSWAP in 0.040 s, queue size: 3
+Reserved_orders_queue: 0 SPOT + 1 SWAP = 1. SolExec consumed SpotLimit order.  SolExec totals: 1 SPOT + 2 SWAP = 3 consumed in 0.040 s.
+Reserved_orders_queue: 1 SPOT + 1 SWAP = 2. Added SpotLimit order. Produced: 5 SPOT + 4 SWAP = 9 in 0.043 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.044 s, queue size: 2, total settled: 3
+Execution_proofs_queue: produced and added EthExecSWAP in 0.051 s, queue size: 3
+Reserved_orders_queue: 1 SPOT + 0 SWAP = 1. EthExec consumed MarketSwap order.  EthExec totals: 3 SPOT + 2 SWAP = 5 consumed in 0.051 s.
+Reserved_orders_queue: 1 SPOT + 1 SWAP = 2. Added MarketSwap order. Produced: 5 SPOT + 5 SWAP = 10 in 0.052 s.
+Reserved_orders_queue: 2 SPOT + 1 SWAP = 3. Added SpotLimit order. Produced: 6 SPOT + 5 SWAP = 11 in 0.053 s.
+Execution_proofs_queue: produced and added SolExecSPOT in 0.058 s, queue size: 4
+Reserved_orders_queue: 1 SPOT + 1 SWAP = 2. SolExec consumed SpotLimit order.  SolExec totals: 2 SPOT + 2 SWAP = 4 consumed in 0.058 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.059 s, queue size: 3, total settled: 4
+Execution_proofs_queue: produced and added EthExecSWAP in 0.063 s, queue size: 4
+Reserved_orders_queue: 1 SPOT + 0 SWAP = 1. EthExec consumed MarketSwap order.  EthExec totals: 3 SPOT + 3 SWAP = 6 consumed in 0.063 s.
+Reserved_orders_queue: 2 SPOT + 0 SWAP = 2. Added SpotLimit order. Produced: 7 SPOT + 5 SWAP = 12 in 0.064 s.
+Reserved_orders_queue: 2 SPOT + 1 SWAP = 3. Added MarketSwap order. Produced: 7 SPOT + 6 SWAP = 13 in 0.064 s.
+Execution_proofs_queue: removed and settled SolExecSWAP in 0.074 s, queue size: 3, total settled: 5
+Reserved_orders_queue: 3 SPOT + 1 SWAP = 4. Added SpotLimit order. Produced: 8 SPOT + 6 SWAP = 14 in 0.075 s.
+Execution_proofs_queue: produced and added EthExecSWAP in 0.076 s, queue size: 4
+Reserved_orders_queue: 2 SPOT + 1 SWAP = 3. EthExec consumed SpotLimit order.  EthExec totals: 4 SPOT + 3 SWAP = 7 consumed in 0.076 s.
+Execution_proofs_queue: produced and added SolExecSPOT in 0.076 s, queue size: 5
+Reserved_orders_queue: 1 SPOT + 1 SWAP = 2. SolExec consumed SpotLimit order.  SolExec totals: 3 SPOT + 2 SWAP = 5 consumed in 0.076 s.
+Reserved_orders_queue: 1 SPOT + 2 SWAP = 3. Added MarketSwap order. Produced: 8 SPOT + 7 SWAP = 15 in 0.077 s.
+Reserved_orders_queue: 2 SPOT + 2 SWAP = 4. Added SpotLimit order. Produced: 9 SPOT + 7 SWAP = 16 in 0.085 s.
+Execution_proofs_queue: produced and added EthExecSPOT in 0.088 s, queue size: 6
+Reserved_orders_queue: 2 SPOT + 1 SWAP = 3. EthExec consumed MarketSwap order.  EthExec totals: 4 SPOT + 4 SWAP = 8 consumed in 0.088 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.089 s, queue size: 5, total settled: 6
+Reserved_orders_queue: 2 SPOT + 2 SWAP = 4. Added MarketSwap order. Produced: 9 SPOT + 8 SWAP = 17 in 0.089 s.
+Execution_proofs_queue: produced and added SolExecSPOT in 0.095 s, queue size: 6
+Reserved_orders_queue: 1 SPOT + 2 SWAP = 3. SolExec consumed SpotLimit order.  SolExec totals: 4 SPOT + 2 SWAP = 6 consumed in 0.095 s.
+Reserved_orders_queue: 2 SPOT + 2 SWAP = 4. Added SpotLimit order. Produced: 10 SPOT + 8 SWAP = 18 in 0.097 s.
+Execution_proofs_queue: produced and added EthExecSWAP in 0.101 s, queue size: 7
+Reserved_orders_queue: 2 SPOT + 1 SWAP = 3. EthExec consumed MarketSwap order.  EthExec totals: 4 SPOT + 5 SWAP = 9 consumed in 0.101 s.
+Reserved_orders_queue: 2 SPOT + 2 SWAP = 4. Added MarketSwap order. Produced: 10 SPOT + 9 SWAP = 19 in 0.102 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.104 s, queue size: 6, total settled: 7
+Reserved_orders_queue: 3 SPOT + 2 SWAP = 5. Added SpotLimit order. Produced: 11 SPOT + 9 SWAP = 20 in 0.109 s.
+Execution_proofs_queue: produced and added EthExecSWAP in 0.113 s, queue size: 7
+Reserved_orders_queue: 2 SPOT + 2 SWAP = 4. EthExec consumed SpotLimit order.  EthExec totals: 5 SPOT + 5 SWAP = 10 consumed in 0.113 s.
+Reserved_orders_queue: 2 SPOT + 3 SWAP = 5. Added MarketSwap order. Produced: 11 SPOT + 10 SWAP = 21 in 0.114 s.
+Execution_proofs_queue: produced and added SolExecSPOT in 0.115 s, queue size: 8
+Reserved_orders_queue: 2 SPOT + 2 SWAP = 4. SolExec consumed MarketSwap order.  SolExec totals: 4 SPOT + 3 SWAP = 7 consumed in 0.115 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.120 s, queue size: 7, total settled: 8
+Reserved_orders_queue: 3 SPOT + 2 SWAP = 5. Added SpotLimit order. Produced: 12 SPOT + 10 SWAP = 22 in 0.120 s.
+Execution_proofs_queue: produced and added EthExecSPOT in 0.126 s, queue size: 8
+Reserved_orders_queue: 2 SPOT + 2 SWAP = 4. EthExec consumed SpotLimit order.  EthExec totals: 6 SPOT + 5 SWAP = 11 consumed in 0.126 s.
+Reserved_orders_queue: 2 SPOT + 3 SWAP = 5. Added MarketSwap order. Produced: 12 SPOT + 11 SWAP = 23 in 0.127 s.
+Reserved_orders_queue: 3 SPOT + 3 SWAP = 6. Added SpotLimit order. Produced: 13 SPOT + 11 SWAP = 24 in 0.131 s.
+Execution_proofs_queue: produced and added SolExecSWAP in 0.134 s, queue size: 9
+Reserved_orders_queue: 3 SPOT + 2 SWAP = 5. SolExec consumed MarketSwap order.  SolExec totals: 4 SPOT + 4 SWAP = 8 consumed in 0.134 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.135 s, queue size: 8, total settled: 9
+Execution_proofs_queue: produced and added EthExecSPOT in 0.139 s, queue size: 9
+Reserved_orders_queue: 2 SPOT + 2 SWAP = 4. EthExec consumed SpotLimit order.  EthExec totals: 7 SPOT + 5 SWAP = 12 consumed in 0.139 s.
+Reserved_orders_queue: 2 SPOT + 3 SWAP = 5. Added MarketSwap order. Produced: 13 SPOT + 12 SWAP = 25 in 0.139 s.
+Reserved_orders_queue: 3 SPOT + 3 SWAP = 6. Added SpotLimit order. Produced: 14 SPOT + 12 SWAP = 26 in 0.141 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.150 s, queue size: 8, total settled: 10
+Execution_proofs_queue: produced and added EthExecSPOT in 0.151 s, queue size: 9
+Reserved_orders_queue: 3 SPOT + 2 SWAP = 5. EthExec consumed MarketSwap order.  EthExec totals: 7 SPOT + 6 SWAP = 13 consumed in 0.151 s.
+Reserved_orders_queue: 4 SPOT + 2 SWAP = 6. Added SpotLimit order. Produced: 15 SPOT + 12 SWAP = 27 in 0.152 s.
+Reserved_orders_queue: 4 SPOT + 3 SWAP = 7. Added MarketSwap order. Produced: 15 SPOT + 13 SWAP = 28 in 0.152 s.
+Execution_proofs_queue: produced and added SolExecSWAP in 0.152 s, queue size: 10
+Reserved_orders_queue: 3 SPOT + 3 SWAP = 6. SolExec consumed SpotLimit order.  SolExec totals: 5 SPOT + 4 SWAP = 9 consumed in 0.152 s.
+Reserved_orders_queue: 4 SPOT + 3 SWAP = 7. Added SpotLimit order. Produced: 16 SPOT + 13 SWAP = 29 in 0.162 s.
+Execution_proofs_queue: produced and added EthExecSWAP in 0.164 s, queue size: 11
+Reserved_orders_queue: 4 SPOT + 2 SWAP = 6. EthExec consumed MarketSwap order.  EthExec totals: 7 SPOT + 7 SWAP = 14 consumed in 0.164 s.
+Reserved_orders_queue: 4 SPOT + 3 SWAP = 7. Added MarketSwap order. Produced: 16 SPOT + 14 SWAP = 30 in 0.164 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.165 s, queue size: 10, total settled: 11
+Execution_proofs_queue: produced and added SolExecSPOT in 0.171 s, queue size: 11
+Reserved_orders_queue: 3 SPOT + 3 SWAP = 6. SolExec consumed SpotLimit order.  SolExec totals: 6 SPOT + 4 SWAP = 10 consumed in 0.171 s.
+Reserved_orders_queue: 4 SPOT + 3 SWAP = 7. Added SpotLimit order. Produced: 17 SPOT + 14 SWAP = 31 in 0.172 s.
+Execution_proofs_queue: produced and added EthExecSWAP in 0.176 s, queue size: 12
+Reserved_orders_queue: 4 SPOT + 2 SWAP = 6. EthExec consumed MarketSwap order.  EthExec totals: 7 SPOT + 8 SWAP = 15 consumed in 0.176 s.
+Reserved_orders_queue: 4 SPOT + 3 SWAP = 7. Added MarketSwap order. Produced: 17 SPOT + 15 SWAP = 32 in 0.177 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.180 s, queue size: 11, total settled: 12
+Reserved_orders_queue: 5 SPOT + 3 SWAP = 8. Added SpotLimit order. Produced: 18 SPOT + 15 SWAP = 33 in 0.183 s.
+Execution_proofs_queue: produced and added EthExecSWAP in 0.188 s, queue size: 12
+Reserved_orders_queue: 4 SPOT + 3 SWAP = 7. EthExec consumed SpotLimit order.  EthExec totals: 8 SPOT + 8 SWAP = 16 consumed in 0.188 s.
+Execution_proofs_queue: produced and added SolExecSPOT in 0.189 s, queue size: 13
+Reserved_orders_queue: 3 SPOT + 3 SWAP = 6. SolExec consumed SpotLimit order.  SolExec totals: 7 SPOT + 4 SWAP = 11 consumed in 0.189 s.
+Reserved_orders_queue: 3 SPOT + 4 SWAP = 7. Added MarketSwap order. Produced: 18 SPOT + 16 SWAP = 34 in 0.189 s.
+Reserved_orders_queue: 4 SPOT + 4 SWAP = 8. Added SpotLimit order. Produced: 19 SPOT + 16 SWAP = 35 in 0.193 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.195 s, queue size: 12, total settled: 13
+Execution_proofs_queue: produced and added EthExecSPOT in 0.201 s, queue size: 13
+Reserved_orders_queue: 4 SPOT + 3 SWAP = 7. EthExec consumed MarketSwap order.  EthExec totals: 8 SPOT + 9 SWAP = 17 consumed in 0.201 s.
+Reserved_orders_queue: 4 SPOT + 4 SWAP = 8. Added MarketSwap order. Produced: 19 SPOT + 17 SWAP = 36 in 0.202 s.
+Reserved_orders_queue: 5 SPOT + 4 SWAP = 9. Added SpotLimit order. Produced: 20 SPOT + 17 SWAP = 37 in 0.203 s.
+Execution_proofs_queue: produced and added SolExecSPOT in 0.208 s, queue size: 14
+Reserved_orders_queue: 4 SPOT + 4 SWAP = 8. SolExec consumed SpotLimit order.  SolExec totals: 8 SPOT + 4 SWAP = 12 consumed in 0.208 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.210 s, queue size: 13, total settled: 14
+Execution_proofs_queue: produced and added EthExecSWAP in 0.213 s, queue size: 14
+Reserved_orders_queue: 4 SPOT + 3 SWAP = 7. EthExec consumed MarketSwap order.  EthExec totals: 8 SPOT + 10 SWAP = 18 consumed in 0.213 s.
+Reserved_orders_queue: 5 SPOT + 3 SWAP = 8. Added SpotLimit order. Produced: 21 SPOT + 17 SWAP = 38 in 0.214 s.
+Reserved_orders_queue: 5 SPOT + 4 SWAP = 9. Added MarketSwap order. Produced: 21 SPOT + 18 SWAP = 39 in 0.215 s.
+Reserved_orders_queue: 6 SPOT + 4 SWAP = 10. Added SpotLimit order. Produced: 22 SPOT + 18 SWAP = 40 in 0.225 s.
+Execution_proofs_queue: produced and added EthExecSWAP in 0.226 s, queue size: 15
+Reserved_orders_queue: 5 SPOT + 4 SWAP = 9. EthExec consumed SpotLimit order.  EthExec totals: 9 SPOT + 10 SWAP = 19 consumed in 0.226 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.227 s, queue size: 14, total settled: 15
+Execution_proofs_queue: produced and added SolExecSPOT in 0.227 s, queue size: 15
+Reserved_orders_queue: 5 SPOT + 3 SWAP = 8. SolExec consumed MarketSwap order.  SolExec totals: 8 SPOT + 5 SWAP = 13 consumed in 0.227 s.
+Reserved_orders_queue: 5 SPOT + 4 SWAP = 9. Added MarketSwap order. Produced: 22 SPOT + 19 SWAP = 41 in 0.228 s.
+Reserved_orders_queue: 6 SPOT + 4 SWAP = 10. Added SpotLimit order. Produced: 23 SPOT + 19 SWAP = 42 in 0.236 s.
+Reserved_orders_queue: 6 SPOT + 5 SWAP = 11. Added MarketSwap order. Produced: 23 SPOT + 20 SWAP = 43 in 0.240 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.242 s, queue size: 14, total settled: 16
+Execution_proofs_queue: produced and added EthExecSPOT in 0.242 s, queue size: 15
+Reserved_orders_queue: 5 SPOT + 5 SWAP = 10. EthExec consumed SpotLimit order.  EthExec totals: 10 SPOT + 10 SWAP = 20 consumed in 0.242 s.
+Reserved_orders_queue: 6 SPOT + 5 SWAP = 11. Added SpotLimit order. Produced: 24 SPOT + 20 SWAP = 44 in 0.247 s.
+Reserved_orders_queue: 6 SPOT + 6 SWAP = 12. Added MarketSwap order. Produced: 24 SPOT + 21 SWAP = 45 in 0.253 s.
+Execution_proofs_queue: removed and settled SolExecSWAP in 0.257 s, queue size: 14, total settled: 17
+Execution_proofs_queue: produced and added SolExecSWAP in 0.257 s, queue size: 15
+Reserved_orders_queue: 6 SPOT + 5 SWAP = 11. SolExec consumed MarketSwap order.  SolExec totals: 8 SPOT + 6 SWAP = 14 consumed in 0.257 s.
+Reserved_orders_queue: 7 SPOT + 5 SWAP = 12. Added SpotLimit order. Produced: 25 SPOT + 21 SWAP = 46 in 0.258 s.
+Reserved_orders_queue: 7 SPOT + 6 SWAP = 13. Added MarketSwap order. Produced: 25 SPOT + 22 SWAP = 47 in 0.266 s.
+Reserved_orders_queue: 8 SPOT + 6 SWAP = 14. Added SpotLimit order. Produced: 26 SPOT + 22 SWAP = 48 in 0.269 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.272 s, queue size: 14, total settled: 18
+Execution_proofs_queue: produced and added EthExecSPOT in 0.273 s, queue size: 15
+Reserved_orders_queue: 7 SPOT + 6 SWAP = 13. EthExec consumed SpotLimit order.  EthExec totals: 11 SPOT + 10 SWAP = 21 consumed in 0.273 s.
+Reserved_orders_queue: 7 SPOT + 7 SWAP = 14. Added MarketSwap order. Produced: 26 SPOT + 23 SWAP = 49 in 0.279 s.
+Reserved_orders_queue: 8 SPOT + 7 SWAP = 15. Added SpotLimit order. Produced: 27 SPOT + 23 SWAP = 50 in 0.280 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.288 s, queue size: 14, total settled: 19
+Execution_proofs_queue: produced and added SolExecSWAP in 0.288 s, queue size: 15
+Reserved_orders_queue: 8 SPOT + 6 SWAP = 14. SolExec consumed MarketSwap order.  SolExec totals: 8 SPOT + 7 SWAP = 15 consumed in 0.288 s.
+Reserved_orders_queue: 9 SPOT + 6 SWAP = 15. Added SpotLimit order. Produced: 28 SPOT + 23 SWAP = 51 in 0.291 s.
+Reserved_orders_queue: 9 SPOT + 7 SWAP = 16. Added MarketSwap order. Produced: 28 SPOT + 24 SWAP = 52 in 0.293 s.
+Reserved_orders_queue: 10 SPOT + 7 SWAP = 17. Added SpotLimit order. Produced: 29 SPOT + 24 SWAP = 53 in 0.302 s.
+Execution_proofs_queue: removed and settled SolExecSWAP in 0.304 s, queue size: 14, total settled: 20
+Execution_proofs_queue: produced and added EthExecSPOT in 0.304 s, queue size: 15
+Reserved_orders_queue: 9 SPOT + 7 SWAP = 16. EthExec consumed SpotLimit order.  EthExec totals: 12 SPOT + 10 SWAP = 22 consumed in 0.304 s.
+Reserved_orders_queue: 9 SPOT + 8 SWAP = 17. Added MarketSwap order. Produced: 29 SPOT + 25 SWAP = 54 in 0.305 s.
+Reserved_orders_queue: 10 SPOT + 8 SWAP = 18. Added SpotLimit order. Produced: 30 SPOT + 25 SWAP = 55 in 0.313 s.
+Reserved_orders_queue: 10 SPOT + 9 SWAP = 19. Added MarketSwap order. Produced: 30 SPOT + 26 SWAP = 56 in 0.318 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.319 s, queue size: 14, total settled: 21
+Execution_proofs_queue: produced and added SolExecSWAP in 0.319 s, queue size: 15
+Reserved_orders_queue: 9 SPOT + 9 SWAP = 18. SolExec consumed SpotLimit order.  SolExec totals: 9 SPOT + 7 SWAP = 16 consumed in 0.319 s.
+Reserved_orders_queue: 10 SPOT + 9 SWAP = 19. Added SpotLimit order. Produced: 31 SPOT + 26 SWAP = 57 in 0.324 s.
+Reserved_orders_queue: 10 SPOT + 10 SWAP = 20. Added MarketSwap order. Produced: 31 SPOT + 27 SWAP = 58 in 0.331 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.334 s, queue size: 14, total settled: 22
+Execution_proofs_queue: produced and added EthExecSPOT in 0.334 s, queue size: 15
+Reserved_orders_queue: 10 SPOT + 9 SWAP = 19. EthExec consumed MarketSwap order.  EthExec totals: 12 SPOT + 11 SWAP = 23 consumed in 0.334 s.
+Reserved_orders_queue: 11 SPOT + 9 SWAP = 20. Added SpotLimit order. Produced: 32 SPOT + 27 SWAP = 59 in 0.335 s.
+Reserved_orders_queue: 11 SPOT + 10 SWAP = 21. Added MarketSwap order. Produced: 32 SPOT + 28 SWAP = 60 in 0.344 s.
+Reserved_orders_queue: 12 SPOT + 10 SWAP = 22. Added SpotLimit order. Produced: 33 SPOT + 28 SWAP = 61 in 0.345 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.349 s, queue size: 14, total settled: 23
+Execution_proofs_queue: produced and added SolExecSPOT in 0.349 s, queue size: 15
+Reserved_orders_queue: 11 SPOT + 10 SWAP = 21. SolExec consumed SpotLimit order.  SolExec totals: 10 SPOT + 7 SWAP = 17 consumed in 0.349 s.
+Reserved_orders_queue: 12 SPOT + 10 SWAP = 22. Added SpotLimit order. Produced: 34 SPOT + 28 SWAP = 62 in 0.356 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.364 s, queue size: 14, total settled: 24
+Execution_proofs_queue: produced and added EthExecSWAP in 0.365 s, queue size: 15
+Reserved_orders_queue: 12 SPOT + 9 SWAP = 21. EthExec consumed MarketSwap order.  EthExec totals: 12 SPOT + 12 SWAP = 24 consumed in 0.365 s.
+Reserved_orders_queue: 12 SPOT + 10 SWAP = 22. Added MarketSwap order. Produced: 34 SPOT + 29 SWAP = 63 in 0.365 s.
+Reserved_orders_queue: 13 SPOT + 10 SWAP = 23. Added SpotLimit order. Produced: 35 SPOT + 29 SWAP = 64 in 0.367 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.380 s, queue size: 14, total settled: 25
+Execution_proofs_queue: produced and added SolExecSPOT in 0.380 s, queue size: 15
+Reserved_orders_queue: 12 SPOT + 10 SWAP = 22. SolExec consumed SpotLimit order.  SolExec totals: 11 SPOT + 7 SWAP = 18 consumed in 0.380 s.
+Reserved_orders_queue: 13 SPOT + 10 SWAP = 23. Added SpotLimit order. Produced: 36 SPOT + 29 SWAP = 65 in 0.380 s.
+Reserved_orders_queue: 14 SPOT + 10 SWAP = 24. Added SpotLimit order. Produced: 37 SPOT + 29 SWAP = 66 in 0.391 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.395 s, queue size: 14, total settled: 26
+Execution_proofs_queue: produced and added EthExecSWAP in 0.395 s, queue size: 15
+Reserved_orders_queue: 14 SPOT + 9 SWAP = 23. EthExec consumed MarketSwap order.  EthExec totals: 12 SPOT + 13 SWAP = 25 consumed in 0.395 s.
+Reserved_orders_queue: 14 SPOT + 10 SWAP = 24. Added MarketSwap order. Produced: 37 SPOT + 30 SWAP = 67 in 0.396 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added SpotLimit order. Produced: 38 SPOT + 30 SWAP = 68 in 0.402 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.410 s, queue size: 14, total settled: 27
+Execution_proofs_queue: produced and added SolExecSPOT in 0.410 s, queue size: 15
+Reserved_orders_queue: 14 SPOT + 10 SWAP = 24. SolExec consumed SpotLimit order.  SolExec totals: 12 SPOT + 7 SWAP = 19 consumed in 0.410 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added SpotLimit order. Produced: 39 SPOT + 30 SWAP = 69 in 0.412 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.425 s, queue size: 14, total settled: 28
+Execution_proofs_queue: produced and added EthExecSWAP in 0.425 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. EthExec consumed MarketSwap order.  EthExec totals: 12 SPOT + 14 SWAP = 26 consumed in 0.425 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added MarketSwap order. Produced: 39 SPOT + 31 SWAP = 70 in 0.426 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.440 s, queue size: 14, total settled: 29
+Execution_proofs_queue: produced and added SolExecSPOT in 0.441 s, queue size: 15
+Reserved_orders_queue: 14 SPOT + 10 SWAP = 24. SolExec consumed SpotLimit order.  SolExec totals: 13 SPOT + 7 SWAP = 20 consumed in 0.441 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added SpotLimit order. Produced: 40 SPOT + 31 SWAP = 71 in 0.441 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.456 s, queue size: 14, total settled: 30
+Execution_proofs_queue: produced and added EthExecSWAP in 0.456 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. EthExec consumed MarketSwap order.  EthExec totals: 12 SPOT + 15 SWAP = 27 consumed in 0.456 s.
+Reserved_orders_queue: 16 SPOT + 9 SWAP = 25. Added SpotLimit order. Produced: 41 SPOT + 31 SWAP = 72 in 0.457 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.471 s, queue size: 14, total settled: 31
+Execution_proofs_queue: produced and added SolExecSPOT in 0.471 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. SolExec consumed SpotLimit order.  SolExec totals: 14 SPOT + 7 SWAP = 21 consumed in 0.471 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added MarketSwap order. Produced: 41 SPOT + 32 SWAP = 73 in 0.472 s.
+Execution_proofs_queue: removed and settled SolExecSWAP in 0.486 s, queue size: 14, total settled: 32
+Execution_proofs_queue: produced and added EthExecSWAP in 0.487 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. EthExec consumed MarketSwap order.  EthExec totals: 12 SPOT + 16 SWAP = 28 consumed in 0.487 s.
+Reserved_orders_queue: 16 SPOT + 9 SWAP = 25. Added SpotLimit order. Produced: 42 SPOT + 32 SWAP = 74 in 0.487 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.502 s, queue size: 14, total settled: 33
+Execution_proofs_queue: produced and added SolExecSPOT in 0.502 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. SolExec consumed SpotLimit order.  SolExec totals: 15 SPOT + 7 SWAP = 22 consumed in 0.502 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added MarketSwap order. Produced: 42 SPOT + 33 SWAP = 75 in 0.503 s.
+Execution_proofs_queue: removed and settled SolExecSWAP in 0.517 s, queue size: 14, total settled: 34
+Execution_proofs_queue: produced and added EthExecSWAP in 0.517 s, queue size: 15
+Reserved_orders_queue: 14 SPOT + 10 SWAP = 24. EthExec consumed SpotLimit order.  EthExec totals: 13 SPOT + 16 SWAP = 29 consumed in 0.517 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added SpotLimit order. Produced: 43 SPOT + 33 SWAP = 76 in 0.518 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.533 s, queue size: 14, total settled: 35
+Execution_proofs_queue: produced and added SolExecSPOT in 0.533 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. SolExec consumed MarketSwap order.  SolExec totals: 15 SPOT + 8 SWAP = 23 consumed in 0.533 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added MarketSwap order. Produced: 43 SPOT + 34 SWAP = 77 in 0.534 s.
+Execution_proofs_queue: removed and settled SolExecSWAP in 0.548 s, queue size: 14, total settled: 36
+Execution_proofs_queue: produced and added EthExecSPOT in 0.548 s, queue size: 15
+Reserved_orders_queue: 14 SPOT + 10 SWAP = 24. EthExec consumed SpotLimit order.  EthExec totals: 14 SPOT + 16 SWAP = 30 consumed in 0.548 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added SpotLimit order. Produced: 44 SPOT + 34 SWAP = 78 in 0.549 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.563 s, queue size: 14, total settled: 37
+Execution_proofs_queue: produced and added SolExecSWAP in 0.564 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. SolExec consumed MarketSwap order.  SolExec totals: 15 SPOT + 9 SWAP = 24 consumed in 0.564 s.
+Reserved_orders_queue: 16 SPOT + 9 SWAP = 25. Added SpotLimit order. Produced: 45 SPOT + 34 SWAP = 79 in 0.565 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.579 s, queue size: 14, total settled: 38
+Execution_proofs_queue: produced and added EthExecSPOT in 0.579 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. EthExec consumed SpotLimit order.  EthExec totals: 15 SPOT + 16 SWAP = 31 consumed in 0.579 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added MarketSwap order. Produced: 45 SPOT + 35 SWAP = 80 in 0.580 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.594 s, queue size: 14, total settled: 39
+Execution_proofs_queue: produced and added SolExecSWAP in 0.594 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. SolExec consumed MarketSwap order.  SolExec totals: 15 SPOT + 10 SWAP = 25 consumed in 0.594 s.
+Reserved_orders_queue: 16 SPOT + 9 SWAP = 25. Added SpotLimit order. Produced: 46 SPOT + 35 SWAP = 81 in 0.595 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.609 s, queue size: 14, total settled: 40
+Execution_proofs_queue: produced and added EthExecSPOT in 0.609 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. EthExec consumed SpotLimit order.  EthExec totals: 16 SPOT + 16 SWAP = 32 consumed in 0.609 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added MarketSwap order. Produced: 46 SPOT + 36 SWAP = 82 in 0.610 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.624 s, queue size: 14, total settled: 41
+Execution_proofs_queue: produced and added SolExecSWAP in 0.625 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. SolExec consumed MarketSwap order.  SolExec totals: 15 SPOT + 11 SWAP = 26 consumed in 0.625 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added MarketSwap order. Produced: 46 SPOT + 37 SWAP = 83 in 0.628 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.640 s, queue size: 14, total settled: 42
+Execution_proofs_queue: produced and added EthExecSPOT in 0.640 s, queue size: 15
+Reserved_orders_queue: 14 SPOT + 10 SWAP = 24. EthExec consumed SpotLimit order.  EthExec totals: 17 SPOT + 16 SWAP = 33 consumed in 0.640 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added SpotLimit order. Produced: 47 SPOT + 37 SWAP = 84 in 0.641 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.655 s, queue size: 14, total settled: 43
+Execution_proofs_queue: produced and added SolExecSWAP in 0.655 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. SolExec consumed MarketSwap order.  SolExec totals: 15 SPOT + 12 SWAP = 27 consumed in 0.655 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added MarketSwap order. Produced: 47 SPOT + 38 SWAP = 85 in 0.656 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.670 s, queue size: 14, total settled: 44
+Execution_proofs_queue: produced and added EthExecSPOT in 0.670 s, queue size: 15
+Reserved_orders_queue: 14 SPOT + 10 SWAP = 24. EthExec consumed SpotLimit order.  EthExec totals: 18 SPOT + 16 SWAP = 34 consumed in 0.671 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added SpotLimit order. Produced: 48 SPOT + 38 SWAP = 86 in 0.671 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.686 s, queue size: 14, total settled: 45
+Execution_proofs_queue: produced and added SolExecSWAP in 0.686 s, queue size: 15
+Reserved_orders_queue: 14 SPOT + 10 SWAP = 24. SolExec consumed SpotLimit order.  SolExec totals: 16 SPOT + 12 SWAP = 28 consumed in 0.686 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added SpotLimit order. Produced: 49 SPOT + 38 SWAP = 87 in 0.687 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.701 s, queue size: 14, total settled: 46
+Execution_proofs_queue: produced and added EthExecSPOT in 0.701 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. EthExec consumed MarketSwap order.  EthExec totals: 18 SPOT + 17 SWAP = 35 consumed in 0.701 s.
+Reserved_orders_queue: 16 SPOT + 9 SWAP = 25. Added SpotLimit order. Produced: 50 SPOT + 38 SWAP = 88 in 0.701 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.716 s, queue size: 14, total settled: 47
+Execution_proofs_queue: produced and added SolExecSPOT in 0.716 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. SolExec consumed SpotLimit order.  SolExec totals: 17 SPOT + 12 SWAP = 29 consumed in 0.716 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added MarketSwap order. Produced: 50 SPOT + 39 SWAP = 89 in 0.717 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.731 s, queue size: 14, total settled: 48
+Execution_proofs_queue: produced and added EthExecSWAP in 0.732 s, queue size: 15
+Reserved_orders_queue: 14 SPOT + 10 SWAP = 24. EthExec consumed SpotLimit order.  EthExec totals: 19 SPOT + 17 SWAP = 36 consumed in 0.732 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added SpotLimit order. Produced: 51 SPOT + 39 SWAP = 90 in 0.732 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.747 s, queue size: 14, total settled: 49
+Execution_proofs_queue: produced and added SolExecSPOT in 0.747 s, queue size: 15
+Reserved_orders_queue: 14 SPOT + 10 SWAP = 24. SolExec consumed SpotLimit order.  SolExec totals: 18 SPOT + 12 SWAP = 30 consumed in 0.747 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added SpotLimit order. Produced: 52 SPOT + 39 SWAP = 91 in 0.747 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.762 s, queue size: 14, total settled: 50
+Execution_proofs_queue: produced and added EthExecSPOT in 0.762 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. EthExec consumed MarketSwap order.  EthExec totals: 19 SPOT + 18 SWAP = 37 consumed in 0.762 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added MarketSwap order. Produced: 52 SPOT + 40 SWAP = 92 in 0.763 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.777 s, queue size: 14, total settled: 51
+Execution_proofs_queue: produced and added SolExecSPOT in 0.777 s, queue size: 15
+Reserved_orders_queue: 14 SPOT + 10 SWAP = 24. SolExec consumed SpotLimit order.  SolExec totals: 19 SPOT + 12 SWAP = 31 consumed in 0.777 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added SpotLimit order. Produced: 53 SPOT + 40 SWAP = 93 in 0.778 s.
+Execution_proofs_queue: removed and settled SolExecSWAP in 0.792 s, queue size: 14, total settled: 52
+Execution_proofs_queue: produced and added EthExecSWAP in 0.792 s, queue size: 15
+Reserved_orders_queue: 14 SPOT + 10 SWAP = 24. EthExec consumed SpotLimit order.  EthExec totals: 20 SPOT + 18 SWAP = 38 consumed in 0.792 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added SpotLimit order. Produced: 54 SPOT + 40 SWAP = 94 in 0.793 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.808 s, queue size: 14, total settled: 53
+Execution_proofs_queue: produced and added SolExecSPOT in 0.808 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. SolExec consumed MarketSwap order.  SolExec totals: 19 SPOT + 13 SWAP = 32 consumed in 0.808 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added MarketSwap order. Produced: 54 SPOT + 41 SWAP = 95 in 0.809 s.
+Execution_proofs_queue: removed and settled SolExecSWAP in 0.823 s, queue size: 14, total settled: 54
+Execution_proofs_queue: produced and added EthExecSPOT in 0.823 s, queue size: 15
+Reserved_orders_queue: 14 SPOT + 10 SWAP = 24. EthExec consumed SpotLimit order.  EthExec totals: 21 SPOT + 18 SWAP = 39 consumed in 0.823 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added SpotLimit order. Produced: 55 SPOT + 41 SWAP = 96 in 0.824 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.838 s, queue size: 14, total settled: 55
+Execution_proofs_queue: produced and added SolExecSWAP in 0.838 s, queue size: 15
+Reserved_orders_queue: 14 SPOT + 10 SWAP = 24. SolExec consumed SpotLimit order.  SolExec totals: 20 SPOT + 13 SWAP = 33 consumed in 0.838 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added SpotLimit order. Produced: 56 SPOT + 41 SWAP = 97 in 0.839 s.
+Execution_proofs_queue: removed and settled SolExecSWAP in 0.853 s, queue size: 14, total settled: 56
+Execution_proofs_queue: produced and added EthExecSPOT in 0.853 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. EthExec consumed MarketSwap order.  EthExec totals: 21 SPOT + 19 SWAP = 40 consumed in 0.853 s.
+Reserved_orders_queue: 16 SPOT + 9 SWAP = 25. Added SpotLimit order. Produced: 57 SPOT + 41 SWAP = 98 in 0.854 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.869 s, queue size: 14, total settled: 57
+Execution_proofs_queue: produced and added SolExecSPOT in 0.869 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. SolExec consumed SpotLimit order.  SolExec totals: 21 SPOT + 13 SWAP = 34 consumed in 0.869 s.
+Reserved_orders_queue: 15 SPOT + 10 SWAP = 25. Added MarketSwap order. Produced: 57 SPOT + 42 SWAP = 99 in 0.870 s.
+Execution_proofs_queue: removed and settled SolExecSWAP in 0.884 s, queue size: 14, total settled: 58
+Execution_proofs_queue: produced and added EthExecSWAP in 0.884 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. EthExec consumed MarketSwap order.  EthExec totals: 21 SPOT + 20 SWAP = 41 consumed in 0.884 s.
+Reserved_orders_queue: 16 SPOT + 9 SWAP = 25. Added SpotLimit order. Produced: 58 SPOT + 42 SWAP = 100 in 0.885 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.899 s, queue size: 14, total settled: 59
+Execution_proofs_queue: produced and added SolExecSPOT in 0.899 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 9 SWAP = 24. SolExec consumed SpotLimit order.  SolExec totals: 22 SPOT + 13 SWAP = 35 consumed in 0.899 s.
+Execution_proofs_queue: removed and settled SolExecSWAP in 0.914 s, queue size: 14, total settled: 60
+Execution_proofs_queue: produced and added EthExecSWAP in 0.915 s, queue size: 15
+Reserved_orders_queue: 15 SPOT + 8 SWAP = 23. EthExec consumed MarketSwap order.  EthExec totals: 21 SPOT + 21 SWAP = 42 consumed in 0.915 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.930 s, queue size: 14, total settled: 61
+Execution_proofs_queue: produced and added SolExecSPOT in 0.930 s, queue size: 15
+Reserved_orders_queue: 14 SPOT + 8 SWAP = 22. SolExec consumed SpotLimit order.  SolExec totals: 23 SPOT + 13 SWAP = 36 consumed in 0.930 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.945 s, queue size: 14, total settled: 62
+Execution_proofs_queue: produced and added EthExecSWAP in 0.945 s, queue size: 15
+Reserved_orders_queue: 13 SPOT + 8 SWAP = 21. EthExec consumed SpotLimit order.  EthExec totals: 22 SPOT + 21 SWAP = 43 consumed in 0.945 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 0.960 s, queue size: 14, total settled: 63
+Execution_proofs_queue: produced and added SolExecSPOT in 0.960 s, queue size: 15
+Reserved_orders_queue: 13 SPOT + 7 SWAP = 20. SolExec consumed MarketSwap order.  SolExec totals: 23 SPOT + 14 SWAP = 37 consumed in 0.960 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 0.975 s, queue size: 14, total settled: 64
+Execution_proofs_queue: produced and added EthExecSPOT in 0.976 s, queue size: 15
+Reserved_orders_queue: 12 SPOT + 7 SWAP = 19. EthExec consumed SpotLimit order.  EthExec totals: 23 SPOT + 21 SWAP = 44 consumed in 0.976 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 0.991 s, queue size: 14, total settled: 65
+Execution_proofs_queue: produced and added SolExecSWAP in 0.991 s, queue size: 15
+Reserved_orders_queue: 12 SPOT + 6 SWAP = 18. SolExec consumed MarketSwap order.  SolExec totals: 23 SPOT + 15 SWAP = 38 consumed in 0.991 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 1.006 s, queue size: 14, total settled: 66
+Execution_proofs_queue: produced and added EthExecSPOT in 1.006 s, queue size: 15
+Reserved_orders_queue: 12 SPOT + 5 SWAP = 17. EthExec consumed MarketSwap order.  EthExec totals: 23 SPOT + 22 SWAP = 45 consumed in 1.006 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 1.021 s, queue size: 14, total settled: 67
+Execution_proofs_queue: produced and added SolExecSWAP in 1.021 s, queue size: 15
+Reserved_orders_queue: 11 SPOT + 5 SWAP = 16. SolExec consumed SpotLimit order.  SolExec totals: 24 SPOT + 15 SWAP = 39 consumed in 1.021 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 1.037 s, queue size: 14, total settled: 68
+Execution_proofs_queue: produced and added EthExecSWAP in 1.037 s, queue size: 15
+Reserved_orders_queue: 11 SPOT + 4 SWAP = 15. EthExec consumed MarketSwap order.  EthExec totals: 23 SPOT + 23 SWAP = 46 consumed in 1.037 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 1.052 s, queue size: 14, total settled: 69
+Execution_proofs_queue: produced and added SolExecSPOT in 1.052 s, queue size: 15
+Reserved_orders_queue: 10 SPOT + 4 SWAP = 14. SolExec consumed SpotLimit order.  SolExec totals: 25 SPOT + 15 SWAP = 40 consumed in 1.052 s.
+Execution_proofs_queue: removed and settled SolExecSWAP in 1.067 s, queue size: 14, total settled: 70
+Execution_proofs_queue: produced and added EthExecSWAP in 1.067 s, queue size: 15
+Reserved_orders_queue: 9 SPOT + 4 SWAP = 13. EthExec consumed SpotLimit order.  EthExec totals: 24 SPOT + 23 SWAP = 47 consumed in 1.067 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 1.083 s, queue size: 14, total settled: 71
+Execution_proofs_queue: produced and added SolExecSPOT in 1.083 s, queue size: 15
+Reserved_orders_queue: 8 SPOT + 4 SWAP = 12. SolExec consumed SpotLimit order.  SolExec totals: 26 SPOT + 15 SWAP = 41 consumed in 1.083 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 1.098 s, queue size: 14, total settled: 72
+Execution_proofs_queue: produced and added EthExecSPOT in 1.098 s, queue size: 15
+Reserved_orders_queue: 8 SPOT + 3 SWAP = 11. EthExec consumed MarketSwap order.  EthExec totals: 24 SPOT + 24 SWAP = 48 consumed in 1.098 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 1.113 s, queue size: 14, total settled: 73
+Execution_proofs_queue: produced and added SolExecSPOT in 1.114 s, queue size: 15
+Reserved_orders_queue: 7 SPOT + 3 SWAP = 10. SolExec consumed SpotLimit order.  SolExec totals: 27 SPOT + 15 SWAP = 42 consumed in 1.114 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 1.129 s, queue size: 14, total settled: 74
+Execution_proofs_queue: produced and added EthExecSWAP in 1.129 s, queue size: 15
+Reserved_orders_queue: 6 SPOT + 3 SWAP = 9. EthExec consumed SpotLimit order.  EthExec totals: 25 SPOT + 24 SWAP = 49 consumed in 1.129 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 1.144 s, queue size: 14, total settled: 75
+Execution_proofs_queue: produced and added SolExecSPOT in 1.144 s, queue size: 15
+Reserved_orders_queue: 6 SPOT + 2 SWAP = 8. SolExec consumed MarketSwap order.  SolExec totals: 27 SPOT + 16 SWAP = 43 consumed in 1.145 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 1.160 s, queue size: 14, total settled: 76
+Execution_proofs_queue: produced and added EthExecSPOT in 1.160 s, queue size: 15
+Reserved_orders_queue: 5 SPOT + 2 SWAP = 7. EthExec consumed SpotLimit order.  EthExec totals: 26 SPOT + 24 SWAP = 50 consumed in 1.160 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 1.175 s, queue size: 14, total settled: 77
+Execution_proofs_queue: produced and added SolExecSWAP in 1.175 s, queue size: 15
+Reserved_orders_queue: 4 SPOT + 2 SWAP = 6. SolExec consumed SpotLimit order.  SolExec totals: 28 SPOT + 16 SWAP = 44 consumed in 1.175 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 1.190 s, queue size: 14, total settled: 78
+Execution_proofs_queue: produced and added EthExecSPOT in 1.190 s, queue size: 15
+Reserved_orders_queue: 4 SPOT + 1 SWAP = 5. EthExec consumed MarketSwap order.  EthExec totals: 26 SPOT + 25 SWAP = 51 consumed in 1.191 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 1.206 s, queue size: 14, total settled: 79
+Execution_proofs_queue: produced and added SolExecSPOT in 1.206 s, queue size: 15
+Reserved_orders_queue: 3 SPOT + 1 SWAP = 4. SolExec consumed SpotLimit order.  SolExec totals: 29 SPOT + 16 SWAP = 45 consumed in 1.206 s.
+Execution_proofs_queue: removed and settled SolExecSWAP in 1.221 s, queue size: 14, total settled: 80
+Execution_proofs_queue: produced and added EthExecSWAP in 1.221 s, queue size: 15
+Reserved_orders_queue: 2 SPOT + 1 SWAP = 3. EthExec consumed SpotLimit order.  EthExec totals: 27 SPOT + 25 SWAP = 52 consumed in 1.221 s.
+Execution_proofs_queue: removed and settled EthExecSPOT in 1.236 s, queue size: 14, total settled: 81
+Execution_proofs_queue: produced and added SolExecSPOT in 1.236 s, queue size: 15
+Reserved_orders_queue: 1 SPOT + 1 SWAP = 2. SolExec consumed SpotLimit order.  SolExec totals: 30 SPOT + 16 SWAP = 46 consumed in 1.236 s.
+Execution_proofs_queue: removed and settled SolExecSWAP in 1.252 s, queue size: 14, total settled: 82
+Execution_proofs_queue: produced and added EthExecSPOT in 1.252 s, queue size: 15
+Reserved_orders_queue: 1 SPOT + 0 SWAP = 1. EthExec consumed MarketSwap order.  EthExec totals: 27 SPOT + 26 SWAP = 53 consumed in 1.252 s.
+Execution_proofs_queue: removed and settled EthExecSWAP in 1.267 s, queue size: 14, total settled: 83
+Execution_proofs_queue: produced and added SolExecSPOT in 1.267 s, queue size: 15
+Reserved_orders_queue: 0 SPOT + 0 SWAP = 0. SolExec consumed SpotLimit order.  SolExec totals: 31 SPOT + 16 SWAP = 47 consumed in 1.267 s.
+Execution_proofs_queue: removed and settled SolExecSPOT in 1.282 s, queue size: 14, total settled: 84
+Execution_proofs_queue: produced and added EthExecSWAP in 1.282 s, queue size: 15
+Execution_proofs_queue: removed and settled EthExecSWAP in 1.297 s, queue size: 14, total settled: 85
+Execution_proofs_queue: produced and added SolExecSPOT in 1.298 s, queue size: 15
+Execution_proofs_queue: removed and settled SolExecSPOT in 1.313 s, queue size: 14, total settled: 86
+Execution_proofs_queue: removed and settled EthExecSPOT in 1.328 s, queue size: 13, total settled: 87
+Execution_proofs_queue: removed and settled SolExecSPOT in 1.343 s, queue size: 12, total settled: 88
+Execution_proofs_queue: removed and settled EthExecSWAP in 1.358 s, queue size: 11, total settled: 89
+Execution_proofs_queue: removed and settled SolExecSPOT in 1.373 s, queue size: 10, total settled: 90
+Execution_proofs_queue: removed and settled EthExecSPOT in 1.389 s, queue size: 9, total settled: 91
+Execution_proofs_queue: removed and settled SolExecSWAP in 1.404 s, queue size: 8, total settled: 92
+Execution_proofs_queue: removed and settled EthExecSPOT in 1.419 s, queue size: 7, total settled: 93
+Execution_proofs_queue: removed and settled SolExecSPOT in 1.434 s, queue size: 6, total settled: 94
+Execution_proofs_queue: removed and settled EthExecSWAP in 1.449 s, queue size: 5, total settled: 95
+Execution_proofs_queue: removed and settled SolExecSPOT in 1.465 s, queue size: 4, total settled: 96
+Execution_proofs_queue: removed and settled EthExecSPOT in 1.480 s, queue size: 3, total settled: 97
+Execution_proofs_queue: removed and settled SolExecSPOT in 1.495 s, queue size: 2, total settled: 98
+Execution_proofs_queue: removed and settled EthExecSWAP in 1.510 s, queue size: 1, total settled: 99
+Execution_proofs_queue: removed and settled SolExecSPOT in 1.525 s, queue size: 0, total settled: 100
+
+ORDER REPORT
+----------------------------------------
+SpotLimit order producer generated 58 orders
+MarketSwap order producer generated 42 orders
+EthExec consumed 27 SPOT + 26 SWAP = 53 total
+SolExec consumed 31 SPOT + 16 SWAP = 47 total
+Elapsed time 1.541 s
