@@ -57,6 +57,11 @@ int main(int argc, char *argv[]) {
 
     std::cout << "Start Main Thread" << std::endl;
 
+    //CHANGED
+    // Get semaphore ready
+    sem_t barrier;
+    sem_init(&barrier, 0, 0);
+
     // Queues: reserved orders for execution and execution proofs for settlement
     order_queue reserved_queue(25);
     order_queue execution_queue(15);
@@ -70,12 +75,9 @@ int main(int argc, char *argv[]) {
     ExecutorItem e2 = {n, avg_solexec, SolExec, &reserved_queue, &execution_queue};
 
     // One settler that settles both execution proofs
-    SettlerItem s = {n, avg_settler, &execution_queue};
+    SettlerItem s = {n, avg_settler, &execution_queue, &barrier};
 
     pthread_t t_p1, t_p2, t_e1, t_e2, t_s;
-
-    sem_t barrier;
-    sem_init(&barrier, 0, 1);
 
 
     int r1 = pthread_create(&t_p1, NULL, producer, &p1);
@@ -84,15 +86,16 @@ int main(int argc, char *argv[]) {
     int r4 = pthread_create(&t_e2, NULL, exec_consumer, &e2);
     int r5 = pthread_create(&t_s, NULL, settler, &s);
 
+    //CHANGED
     // checked: threads made successfully
-    
-    /*
-    pthread_join(t_p1, NULL);
-    pthread_join(t_p2, NULL);
-    pthread_join(t_e1, NULL);
-    pthread_join(t_e2, NULL);
-    pthread_join(t_s, NULL);
-    */
+    if (r1 || r2 || r3 || r4 || r5) {
+        std::cerr << "Error: failed to create one or more threads." << std::endl;
+        return 1;
+    }
+
+    //CHANGED
+    // Makes the main thread sleep till t_s signals that it has finished
+    sem_wait(&barrier);
 
     std::cout << "End Main Thread" << std::endl;
     return 0;

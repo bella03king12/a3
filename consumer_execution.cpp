@@ -6,6 +6,7 @@
 #include <thread>
 #include <chrono>
 #include "order.h"
+#include <semaphore.h>
 /*
 Stage 3 :
 - Two executor threads (EthExec and SolExec) consume from the reserved order queue, simulate on-chain execution, and produce execution proofs in the execution queue.
@@ -35,5 +36,9 @@ void *settler(void *arg) {
     }
 
     std::cout << "Settler finished\n";
+
+    //CHANGED
+    //signals main thread that every execution proof has been consumed and it is time to finish the program
+    sem_post(items->semaphore);
     return nullptr;
 }

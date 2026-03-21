@@ -34,7 +34,7 @@ void *exec_consumer(void *arg) {
         //consumed++;
 
         std::cout << "Executor " << order_consumerNames[items->chain]
-                  << " handled " << items->reserved_queue->order_counter << " order(s) of type "
+                  << " handled " << items->reserved_queue->consume_counter << " order(s) of type "
                   << order_producerNames[order.type] << "\n";
     }
 

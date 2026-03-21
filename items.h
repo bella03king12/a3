@@ -3,6 +3,7 @@
 
 #include "order_queue.h"
 #include "trade_pipeline.h"
+#include <semaphore.h>
 
 /*
 This file defines the data structures for producer, executor, and settler threads in the trade pipeline.
@@ -30,6 +31,7 @@ struct SettlerItem {
     int n;
     int avg_time;
     order_queue* execution_queue;
+    sem_t * semaphore;
 };
 
 #endif
