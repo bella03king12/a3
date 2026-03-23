@@ -23,6 +23,9 @@ class order_queue {
         //and are not shared with producer and consumer
         std::atomic<int> order_counter{0};
         std::atomic<int> consume_counter{0};
+        std::atomic<int> produced_spot{0};
+        std::atomic<int> produced_swap{0};
+        std::atomic<int> produced_claimed{0};
         std::queue<Order> buffer;
 
     private:

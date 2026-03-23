@@ -8,31 +8,26 @@
 #include "order.h"
 #include "log.h"
 
-extern std::atomic<int> produced_spot;
-extern std::atomic<int> produced_swap;
-extern std::atomic<int> produced_claimed;
+extern std::atomic<int> produced_spot_main;
+extern std::atomic<int> produced_swap_main;
+//extern std::atomic<int> produced_claimed;
 extern std::chrono::high_resolution_clock::time_point start_time;
 
 void *producer(void *arg) {
     ProducerItem *items = (ProducerItem *)arg;
-
-    // CHANGED: items->n  to items->n - 1 : WORKS NOW but kinda doesn't make sense
-    while (items->reserved_queue->order_counter < items->n - 1) {
+    
+    while (items->reserved_queue->order_counter < items->n) {
+        //std::cout << "ITERATION: " << items->reserved_queue->order_counter << std::endl;
         //CHANGED
-        produced_claimed.fetch_add(1);
         std::this_thread::sleep_for(std::chrono::milliseconds(items->avg_time));
         Order order{items->order_type};
         items->reserved_queue->insert_order(order);
 
-        //CHANGED
-        if (order.type == SpotLimit) {
-            produced_spot++;
-        } else {
-            produced_swap++;
-        }
+        //std::cout << "PRODUCED: " << produced_claimed << " SPOT: " << produced_spot << " SWAP: " << produced_swap << std::endl;
+
         unsigned int produced[OrderTypeN] = {
-            static_cast<unsigned int>(produced_spot.load()),
-            static_cast<unsigned int>(produced_swap.load())
+            static_cast<unsigned int>(items->reserved_queue->produced_spot.load()),
+            static_cast<unsigned int>(items->reserved_queue->produced_swap.load())
         };
         unsigned int in_queue[OrderTypeN] = {
             static_cast<unsigned int>(items->reserved_queue->get_spot_in_queue()),
@@ -42,5 +37,7 @@ void *producer(void *arg) {
         log_added_order(added);
         //std::cout << "Insert " << order.type << "Produced: " << items->reserved_queue->order_counter << std::endl;
     }
+    produced_spot_main.store(items->reserved_queue->produced_spot.load());
+    produced_swap_main.store(items->reserved_queue->produced_swap.load());
     return nullptr;
 }

@@ -31,7 +31,7 @@ void order_queue::insert_order(Order order) {
 
     // check for space in the buffer based on number of orders and type of order
 
-    while ((int)buffer.size() == max ||
+    while ((int)buffer.size() >= max ||
            (order.type == MarketSwap && market_swap_in_queue >= 10)) {
         // make the calling thread wait till remove() consumer thread signals space is availiable
         pthread_cond_wait(&cond_produce, &lock);
@@ -45,21 +45,24 @@ void order_queue::insert_order(Order order) {
     //atomic int var that increments upon each order that is added
     //should be a safe increment (atomic and in critical section)
     order_counter++;
+    produced_claimed++;
 
     //CHANGED
     //Update order type counters
     if (order.type == MarketSwap) {
         market_swap_in_queue++;
         swap_in_queue++;
+        produced_swap++;
     } 
     else {
         spot_in_queue++;
+        produced_spot++;
     }
 
     //wake consumer if an order was added to an empty queue
-    if (was_empty) {
+    //if (was_empty) {
         pthread_cond_signal(&cond_consume);
-    }
+    //}
 
     pthread_mutex_unlock(&lock);
 }
@@ -91,9 +94,9 @@ Order order_queue::remove_order() {
     }
 
     //QUESTIONABLE: is this right "(order.type == MarketSwap)" ???
-    if (was_full || (order.type == MarketSwap)) {
+    //if (was_full || (order.type == MarketSwap)) {
         pthread_cond_signal(&cond_produce);
-    }
+    //}
 
     pthread_mutex_unlock(&lock);
     return order;

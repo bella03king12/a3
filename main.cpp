@@ -12,8 +12,8 @@
 #include <chrono>
 
 
-std::atomic<int> produced_spot{0};
-std::atomic<int> produced_swap{0};
+std::atomic<int> produced_spot_main{0};
+std::atomic<int> produced_swap_main{0};
 std::atomic<int> produced_claimed{0};
 std::atomic<int> execution_claimed{0};
 std::chrono::high_resolution_clock::time_point start_time;
@@ -66,8 +66,8 @@ int main(int argc, char *argv[]) {
     //CHANGED
     produced_claimed.store(0);
     execution_claimed.store(0);
-    produced_spot.store(0);
-    produced_swap.store(0);
+    produced_spot_main.store(0);
+    produced_swap_main.store(0);
 
     //CHANGED
     // Get semaphore ready
@@ -119,8 +119,8 @@ int main(int argc, char *argv[]) {
 
     //CHANGED
     unsigned int produced[OrderTypeN] = {
-        static_cast<unsigned int>(produced_spot.load()),
-        static_cast<unsigned int>(produced_swap.load())
+        static_cast<unsigned int>(produced_spot_main.load()),
+        static_cast<unsigned int>(produced_swap_main.load())
     };
     unsigned int eth_consumed[OrderTypeN] = {
         static_cast<unsigned int>(e1.consumed_spot),
