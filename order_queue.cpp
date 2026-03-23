@@ -1,3 +1,6 @@
+// ISABELLA KING (129914717)
+// JOSE HERNANDEZ SANCHEZ (826465400)
+
 #include "order_queue.h"
 
 /*
@@ -13,7 +16,7 @@ prevent overloading the execution stage with too many complex orders.
 */
 
 
-order_queue::order_queue(int n) {
+order_queue::order_queue(int n, int production_limit) {
     // max size of the buffer
     max = n;
     // number of market_swap types in buffer
@@ -37,26 +40,28 @@ void order_queue::insert_order(Order order) {
         pthread_cond_wait(&cond_produce, &lock);
     }
 
-    //check if need to wake consumer
-    bool was_empty = buffer.empty();
-    buffer.push(order);
+    if (order_counter < 100) {
+        //check if need to wake consumer
+        bool was_empty = buffer.empty();
+        buffer.push(order);
 
 
-    //atomic int var that increments upon each order that is added
-    //should be a safe increment (atomic and in critical section)
-    order_counter++;
-    produced_claimed++;
+        //atomic int var that increments upon each order that is added
+        //should be a safe increment (atomic and in critical section)
+        order_counter++;
+        produced_claimed++;
 
-    //CHANGED
-    //Update order type counters
-    if (order.type == MarketSwap) {
-        market_swap_in_queue++;
-        swap_in_queue++;
-        produced_swap++;
-    } 
-    else {
-        spot_in_queue++;
-        produced_spot++;
+        //CHANGED
+        //Update order type counters
+        if (order.type == MarketSwap) {
+            market_swap_in_queue++;
+            swap_in_queue++;
+            produced_swap++;
+        } 
+        else {
+            spot_in_queue++;
+            produced_spot++;
+        }
     }
 
     //wake consumer if an order was added to an empty queue

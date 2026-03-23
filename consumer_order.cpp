@@ -1,3 +1,6 @@
+// ISABELLA KING (129914717)
+// JOSE HERNANDEZ SANCHEZ (826465400)
+
 #include "consumer_order.h"
 #include "items.h"
 #include "order_queue.h"

@@ -1,3 +1,7 @@
+// ISABELLA KING (129914717)
+// JOSE HERNANDEZ SANCHEZ (826465400)
+
+
 #include <iostream>
 #include <string>
 #include <pthread.h>
@@ -75,8 +79,8 @@ int main(int argc, char *argv[]) {
     sem_init(&barrier, 0, 0);
 
     // Queues: reserved orders for execution and execution proofs for settlement
-    order_queue reserved_queue(25);
-    order_queue execution_queue(15);
+    order_queue reserved_queue(25, n);
+    order_queue execution_queue(15, n);
 
     // Two producers, one for each order type
     ProducerItem p1 = {n, avg_spot, SpotLimit, &reserved_queue};

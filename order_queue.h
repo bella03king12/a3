@@ -1,3 +1,6 @@
+// ISABELLA KING (129914717)
+// JOSE HERNANDEZ SANCHEZ (826465400)
+
 #ifndef ORDER_QUEUE_H
 #define ORDER_QUEUE_H
 
@@ -9,7 +12,7 @@
 
 class order_queue {
     public:
-        order_queue(int n);
+        order_queue(int n, int production_limit);
         void insert_order(Order order);
         Order remove_order();
         int size();
