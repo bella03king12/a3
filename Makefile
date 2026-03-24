@@ -1,4 +1,5 @@
-#Makefile
+# ISABELLA KING (129914717)
+# JOSE HERNANDEZ SANCHEZ (826465400)
 
 # Specify compiler
 CXX = g++
@@ -10,12 +11,9 @@ CXXFLAGS = -std=c++11 -Wall -g3 -c -shared -pthread
 # object files
 OBJS = log.o main.o consumer_order.o consumer_execution.o producer_order.o order_queue.o
 
-#  millisleep.o init.o items.o
-
 # Program name
 PROGRAM = tradepipeline
 
-# The program depends upon its object files
 $(PROGRAM) : $(OBJS)
 	$(CXX) -o $(PROGRAM) $^
 
@@ -34,22 +32,9 @@ producer_order.o: producer_order.cpp producer_order.h
 order_queue.o: order_queue.cpp order_queue.h
 	$(CXX) $(CXXFLAGS) order_queue.cpp
 
-#items.o: items.cpp items.h
-#	$(CXX) $(CXXFLAGS) items.cpp
-
-#init.o: init.cpp init.h
-#	$(CXX) $(CXXFLAGS) init.cpp
-
 log.o: log.cpp log.h
 	$(CXX) $(CXXFLAGS) log.cpp
 
-#millisleep.o: millisleep.cpp millisleep.h
-#	$(CXX) $(CXXFLAGS) millisleep.cpp
-
-# Once things work, people frequently delete their object files.
-# If you use "make clean", this will do it for you.
-# As we use gnuemacs which leaves auto save files terminating
-# with ~, we will delete those as well.
 clean :
 	rm -f *.o $(PROGRAM)
 

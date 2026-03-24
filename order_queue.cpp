@@ -1,3 +1,6 @@
+// ISABELLA KING (129914717)
+// JOSE HERNANDEZ SANCHEZ (826465400)
+
 #include "order_queue.h"
 
 /*
@@ -26,9 +29,9 @@ prevent overloading the execution stage with too many complex orders.
 
 // Set up the queue with a maximum size and initialize all counters and sync primitives
 
-
-order_queue::order_queue(int n) {
-    // The most orders we can hold at once
+// input: n = max num in buffer, production_limit = max num of orders
+order_queue::order_queue(int n, int production_limit) {
+    // The most orders we can hold at once in the buffer
     max = n;
     // Tracks how many MarketSwap orders are currently in the queue (capped at 10)
     market_swap_in_queue = 0;
@@ -38,6 +41,7 @@ order_queue::order_queue(int n) {
     lock = PTHREAD_MUTEX_INITIALIZER;
     cond_produce = PTHREAD_COND_INITIALIZER;
     cond_consume = PTHREAD_COND_INITIALIZER;
+    production_max = production_limit;
 }
 
 // insert_order() - Called by a producer thread to add an order to the queue.
@@ -53,27 +57,31 @@ void order_queue::insert_order(Order order) {
         pthread_cond_wait(&cond_produce, &lock);
     }
 
-    bool was_empty = buffer.empty();
-    buffer.push(order);
+    // added another if statement to help prevent a one off error in swap or spot values
+    // it would be off every 10th run or so, but this fixes it
+    if (order_counter < production_max) {
+        bool was_empty = buffer.empty();
+        buffer.push(order);
 
-    // order_counter tracks the total number of orders ever inserted (used to know when to stop)
-    // produced_claimed is also incremented here safely inside the critical section
-    order_counter++;
-    produced_claimed++;
+        // order_counter tracks the total number of orders ever inserted (used to know when to stop)
+        // produced_claimed is also incremented here safely inside the critical section
+        order_counter++;
+        produced_claimed++;
 
-    // Update type-specific counters so consumers and logs can see what's in the queue
-    if (order.type == MarketSwap) {
-        market_swap_in_queue++;
-        swap_in_queue++;
-        produced_swap++;
-    } else {
-        spot_in_queue++;
-        produced_spot++;
+        // Update type-specific counters so consumers and logs can see what's in the queue
+        if (order.type == MarketSwap) {
+            market_swap_in_queue++;
+            swap_in_queue++;
+            produced_swap++;
+        } else {
+            spot_in_queue++;
+            produced_spot++;
+        }
     }
 
     // Wake up a waiting consumer now that there's something in the queue
     // if (was_empty) {
-    //    pthread_cond_signal(&cond_consume);
+    pthread_cond_signal(&cond_consume);
     // }
 
     pthread_mutex_unlock(&lock);
@@ -107,7 +115,7 @@ Order order_queue::remove_order() {
 
     // Wake up a waiting producer now that there's space in the queue
     // if (was_full || (order.type == MarketSwap)) {
-    //    pthread_cond_signal(&cond_produce);
+    pthread_cond_signal(&cond_produce);
     // }
 
     pthread_mutex_unlock(&lock);

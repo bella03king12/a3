@@ -1,3 +1,6 @@
+// ISABELLA KING (129914717)
+// JOSE HERNANDEZ SANCHEZ (826465400)
+
 #include "consumer_order.h"
 #include "items.h"
 #include "order_queue.h"
@@ -9,6 +12,7 @@
 #include "log.h"
 
 // Global start time (set in main) used for timing/logging
+// Used for printing, not synchonization
 extern std::chrono::high_resolution_clock::time_point start_time;
 // Shared counter that tracks how many executor threads have claimed work this loop cycle
 extern std::atomic<int> execution_claimed;
@@ -57,7 +61,7 @@ void *exec_consumer(void *arg) {
         OrderRemoved removed = {items->chain, order.type, consumed, in_queue};
         log_removed_order(removed);
 
-        // Set chain for proof  // CHANGED: Assign execution chain to order for proof identification
+        // Set chain for proof; Assign execution chain to order for proof identification
         order.chain = items->chain;
 
         // Push the execution proof into the execution queue for the settler

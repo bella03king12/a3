@@ -1,3 +1,6 @@
+// ISABELLA KING (129914717)
+// JOSE HERNANDEZ SANCHEZ (826465400)
+
 #include <stdio.h>
 #include <time.h>
 #include <pthread.h>

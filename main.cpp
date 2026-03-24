@@ -1,3 +1,6 @@
+// ISABELLA KING (129914717)
+// JOSE HERNANDEZ SANCHEZ (826465400)
+
 #include <iostream>
 #include <string>
 #include <pthread.h>
@@ -13,6 +16,7 @@
 
 
 // Global counters used across threads to track overall production and execution progress
+// Used for printing, not synchonization
 std::atomic<int> produced_spot_main{0};   // Total SpotLimit orders produced (final tally)
 std::atomic<int> produced_swap_main{0};   // Total MarketSwap orders produced (final tally)
 std::atomic<int> produced_claimed{0};     // Orders claimed by the queue's insert logic
@@ -64,33 +68,29 @@ int main(int argc, char *argv[]) {
        ____________*/
 
 
-    //CHANGED
+    // sets starting values
     produced_claimed.store(0);
     execution_claimed.store(0);
     produced_spot_main.store(0);
     produced_swap_main.store(0);
 
-    //CHANGED
     // Get semaphore ready
     sem_t barrier;
     sem_init(&barrier, 0, 0);
 
     // Queues: reserved orders for execution and execution proofs for settlement
-    order_queue reserved_queue(25);
+    order_queue reserved_queue(25, n);
     // Stage 2 → 3: executors put proofs here; the settler pulls from here
-    order_queue execution_queue(15);
+    order_queue execution_queue(15, n);
 
     // Two producers, one for each order type
     ProducerItem p1 = {n, avg_spot, SpotLimit, &reserved_queue};
     ProducerItem p2 = {n, avg_market, MarketSwap, &reserved_queue};
 
-
-    //CHANGED
     // Two executor threads: Eth and Sol
     ExecutorItem e1 = {n, avg_ethexec, EthExec, &reserved_queue, &execution_queue, 0, 0};
     ExecutorItem e2 = {n, avg_solexec, SolExec, &reserved_queue, &execution_queue, 0, 0};
 
-    //CHANGED
     // One settler that settles both execution proofs
     SettlerItem s = {n, avg_settler, &execution_queue, &barrier};
 
@@ -99,26 +99,23 @@ int main(int argc, char *argv[]) {
 
     pthread_t t_p1, t_p2, t_e1, t_e2, t_s;
 
+    // call all threads at once
     int r1 = pthread_create(&t_p1, NULL, producer, &p1);
     int r2 = pthread_create(&t_p2, NULL, producer, &p2);
     int r3 = pthread_create(&t_e1, NULL, exec_consumer, &e1);
     int r4 = pthread_create(&t_e2, NULL, exec_consumer, &e2);
     int r5 = pthread_create(&t_s, NULL, settler, &s);
 
-    //CHANGED
     // checked: threads made successfully
     if (r1 || r2 || r3 || r4 || r5) {
         std::cerr << "Error: failed to create one or more threads." << std::endl;
         return 1;
     }
 
-    //CHANGED
     // Makes the main thread sleep till t_s signals that it has finished
     sem_wait(&barrier);
 
-
-
-    //CHANGED
+    // print final summary
     unsigned int produced[OrderTypeN] = {
         static_cast<unsigned int>(produced_spot_main.load()),
         static_cast<unsigned int>(produced_swap_main.load())

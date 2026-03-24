@@ -1,3 +1,6 @@
+// ISABELLA KING (129914717)
+// JOSE HERNANDEZ SANCHEZ (826465400)
+
 #include "consumer_execution.h"
 #include "items.h"
 #include "order_queue.h"
@@ -10,6 +13,7 @@
 #include "log.h"
 
 // We need access to the global start time set in main for timing purposes
+// Used for printing, not synchonization
 extern std::chrono::high_resolution_clock::time_point start_time;
 
 /*
@@ -50,7 +54,6 @@ void *settler(void *arg) {
             static_cast<unsigned int>(settled));
     }
 
-    //CHANGED
     //signals main thread that every execution proof has been consumed and it is time to finish the program
     sem_post(items->semaphore);
     return nullptr;

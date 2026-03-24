@@ -1,3 +1,6 @@
+// ISABELLA KING (129914717)
+// JOSE HERNANDEZ SANCHEZ (826465400)
+
 #ifndef ITEMS_H
 #define ITEMS_H
 
@@ -7,9 +10,12 @@
 
 /*
 This file defines the data structures for producer, executor, and settler threads in the trade pipeline.
-- ProducerItem: Contains parameters for producer threads, including the number of orders to produce, average time per order, order type, and reference to the reserved queue.
-- ExecutorItem: Contains parameters for executor threads, including the number of orders to consume, average time per execution, execution chain type, and references to both the reserved queue and execution queue.
-- SettlerItem: Contains parameters for the settler thread, including the number of execution proofs to settle, average time per settlement, and reference to the execution queue.
+- ProducerItem: Contains parameters for producer threads, including the number of orders to produce, 
+  average time per order, order type, and reference to the reserved queue.
+- ExecutorItem: Contains parameters for executor threads, including the number of orders to consume, 
+  average time per execution, execution chain type, and references to both the reserved queue and execution queue.
+- SettlerItem: Contains parameters for the settler thread, including the number of execution proofs to 
+  settle, average time per settlement, and reference to the execution queue.
 */
 
 struct ProducerItem {
